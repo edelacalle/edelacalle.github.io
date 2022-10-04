@@ -1,0 +1,124 @@
+<div id="id_home" class="card full-height">
+    <div class="card-header">
+      <div class="alert alert-primary" role="alert">
+        <center>Bienvenido al pasaporte Armonía</center>
+        <button onclick="caitest()">Test</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <div id="id_0" style="display:none">
+        <div class="alert alert-info" role="alert">
+          Hola , veo que eres un invitado , para poder pertenecer a la comunidad has de crearte un pasaporte
+        </div>
+        
+      
+        <ul class="list-group list-group-flush">
+
+
+          <li class="list-group-item" onclick="oWallet.create() ; oWallet.save_local()">
+            <label class="form-label" >Necesito una billetera nueva</label>
+            <div class="mb-3 row">
+
+              <div class="col-sm-11">
+                <button class="btn btn-outline-info">Pulsa aqui para crear tu propio pasaporte</button>
+              </div>
+              <label class="col-sm-1 col-form-label"><i class="bi bi-plus-circle" role="img" aria-label="Key"></i></label>
+
+
+
+
+
+            </div> 
+          </li>
+
+          <li class="list-group-item" >
+
+            <label class="form-label">Dispongo de la clave privada</label>
+            <div class="mb-3 row">
+                <div class="col-sm-11">
+                  <input type="text" 
+                    class="form-control" 
+                    autocomplete="false" 
+                    placeholder="Introduce la Clave Privada" 
+                    onchange="importPk(this.value)">
+                </div>
+                <label class="col-sm-1 col-form-label"><i class="bi-key" role="img" aria-label="Key"></i></label>
+            </div>
+          </li>
+
+         
+          <li class="list-group-item">
+            <label class="form-label">Tengo la billetera en un fichero</label>
+            <div class="mb-3 row">
+                <div class="col-sm-11">
+                    <input type="file"  onchange="oWallet.import_json(this) ">
+                </div>
+                <label class="col-sm-1 col-form-label"><i class="bi bi-folder" role="img" aria-label="File"></i></label>
+            </div>
+
+            
+          </li>
+
+        </ul>
+        </div>  
+      </div>
+      <div id="id_1" style="display:none" class="alert alert-warning" role="alert">
+        Hola , veo que ya tienes una billetera activada  <b cai-app="wallet.addr" ></b>,  pero necesitas sellarla dentro de la comunidad 
+        <center><button onclick="navigate('newpass')" class="btn btn-info">Pulsa aqui para sellar tu pasaporte</button></center>
+      </div>
+
+      <div id="id_2" style="display:none" class="alert alert-success" role="alert">
+        Hola <b cai-app="user.name"></b> Bienvenid@ a Armonia <br/>
+        Tu Alias <b cai-app="user.nomalias" ></b>
+        Tu Addr <b cai-app="user.addr" ></b>
+        Tu Gas <b cai-app="wallet.bal" ></b>
+        Tu Monedas <b cai-app="user.silver" ></b>
+
+      </div>
+
+    </div>
+     
+
+  </div>
+
+  <script>
+    async function importPk(pk){
+      if( oWallet.import_prvK(pk) ) {
+        if( await oDlg.yesno({msg:"¿La Direccion "+cai_abbr(oWallet.settings.wallet.address) +" es correcta ? "})){
+            if( await oDlg.yesno({msg:"¿ Deseas guardarlo en local ? "})){
+              oWallet.save_local();
+            }
+            navigate('home');
+        }
+      }
+    }
+
+    $("[cai-app='user.name']").html(app.user["name"]);
+    $("[cai-app='user.nomalias']").html(app.user["nomalias"]);
+    $("[cai-app='user.addr']").html(app.user["addr"]);
+    $("[cai-app='wallet.bal']").html(oWallet.settings.balance);
+    $("[cai-app='wallet.addr']").html(oWallet.settings.addr);
+    $("[cai-app='user.silver']").html(app.user["silver"]);
+
+    switch (oWallet.settings.status) {
+      case 0:
+          $("#id_home #id_0").show()
+          $("#id_home #id_1").hide()
+          $("#id_home #id_2").hide()
+        break;
+      case 1:
+          $("#id_home #id_0").hide()
+          $("#id_home #id_1").show()
+          $("#id_home #id_2").hide()
+        break;
+      case 2:
+          $("#id_home #id_0").hide()
+          $("#id_home #id_1").hide()
+          $("#id_home #id_2").show()
+        break;
+    
+      default:
+        break;
+    }
+  </script>
+

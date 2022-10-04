@@ -1,0 +1,278 @@
+    <style>
+            .custom-file-button input[type=file] {
+                margin-left: -2px !important;
+            }
+
+            .custom-file-button input[type=file]::-webkit-file-upload-button {
+                display: none;
+            }
+
+            .custom-file-button input[type=file]::file-selector-button {
+                display: none;
+            }
+
+            .custom-file-button:hover label {
+                xbackground-color: #dde0e3;
+                xxbackground-color: red;
+                cursor: pointer;
+            }
+    </style>
+    <span id="id_index2">        
+            <div class="alert alert-info">
+                <center>Acceso al pasaporte armonia</center>
+              
+            </div>
+     
+
+            <div style="display:none" class="alert alert-danger" cai-visible="app.wallet.settings.status == 0 ">
+                <center><b>No detecto ningun pasaporte almacenado en este navegador</b></center>
+                <p>Tu nivel de acceso es <b>0</b> , con este nivel solo puedes acceder a la parte publica de la Comunidad</p>
+            
+                <div class="list-group">
+                    <div class="row">
+                       
+                        <div class="col col-12 d-grid gap-2 p-2">
+                            <button onclick="app.wallet.create()" class="btn btn-outline-primary" type="button">Quiero crear un pasaporte</button>
+                        </div>
+                        <div class="col col-12 d-grid gap-2 p-2">
+                            <button  class="btn btn-outline-primary" type="button">
+                                Quiero Importar un pasaporte
+                                <div class="input-group custom-file-button">
+                                    <label class="input-group-text" for="inputGroupFile">
+                                        <i class="bi bi-filetype-json"></i>
+                                    </label>
+                                    <input type="file" class="form-control btn btn-outline-light" id="inputGroupFile" role="button"  xonchange="app.wallet.import_json(this)" >
+                                    <label class="input-group-text" onclick="app.wallet.import_json(document.getElementById('inputGroupFile'))">
+                                        <i class="bi bi-send"></i>
+                                    </label>
+                                </div>
+                             
+                            </button>
+                        </div>
+                        <div class="col col-12 d-grid gap-2 p-2">
+                            <button  class="btn btn-outline-primary" type="button">
+                                Quiero importar con una clave privada
+                                <div class="input-group">
+                                    <span cai-paste data-orig="#id_index2 #id_prvK"></span>
+                                    <input role="button"
+                                        id="id_prvK"
+                                        type="text" 
+                                        style = "text-align: left;"
+                                        class="form-control btn btn-outline-light"
+                                        placeholder="Introduce tu clave privada"
+                                    />
+                                    
+                                    <label class="input-group-text" onclick="app.wallet.create($('#id_index2 #id_prvK').val())"">
+                                        <i class="bi bi-send"></i>
+                                    </label>
+                                    
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="col col-12 d-grid gap-2 p-2">
+                            <button  class="btn btn-outline-primary" type="button">
+                                Quiero importar con una frase de recuperacion
+                                <div class="input-group">
+                                    <span cai-paste data-orig="#id_index2 #id_prvMemo"></span>
+                                    <input role="button"
+                                        id="id_prvMemo"
+                                        type="text" 
+                                        style="text-align: left;"
+                                        class="form-control btn btn-outline-light"
+                                        placeholder="Introduce las 12 palabras"
+
+                                    />
+                                    
+                                    <label class="input-group-text" onclick="app.wallet.createFromMemo($('#id_index2 #id_prvMemo').val())"">
+                                        <i class="bi bi-send"></i>
+                                    </label>
+                                    
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col col-12 d-grid gap-2 p-2" >
+                            <button  class="btn btn-outline-primary disabled" type="button">Tengo un sistema biometrico</button>
+                        </div>
+                        <div class="col col-12 d-grid gap-2 p-2" >
+                            <button  class="btn btn-outline-primary disabled" type="button">Tengo una llave hardware</button>
+                        </div>
+
+                    </div>
+
+
+
+
+     
+                </div>
+            
+                
+      
+            </div>
+
+            
+            <div style="display:none" class="alert alert-info" cai-visible="app.wallet.settings.status ==  WalletStatus.wallet ">
+                <center><b>Dispones de un pasaporte , pero aun no lo tienes sellado</b></center>
+                
+
+                <p>Tu nivel de acceso es <b>1</b> , con este nivel puedes comunicarte con la Comunidad de una manera segura , pero no puedes participar en las votaciones</p>
+                <div class="list-group ">
+         
+   
+
+                <div  >
+                    <h4><center>Quiero registrar mi nombre en la comunidad</center></h4>
+                    <ul class="list-group list-group-flush">
+     
+
+                    <li class="list-group-item">
+                        <div class="mb-3 p-2" >
+                          <label  class="form-label">Nombre</label>
+                          <input 
+                            id="id_nombre"
+                            type="text" 
+                            class="form-control"
+                          >
+                
+                        </div>
+                
+                      </li>
+                
+                      <li class="list-group-item">
+                        <div class="mb-3 p-2">
+                          <label  class="form-label">Alias</label>
+                          <input 
+                            type="text" 
+                            disabled="true"
+                            id="id_alias"
+                            class="form-control"
+                      
+                          >
+                
+                        </div>
+                
+                      </li>
+                      <li class="list-group-item">
+                        <div class="mb-3 p-2" cai-visible="app.wallet.settings.gas > 0.049">
+                            <div class="col col-12 d-grid gap-2 p-2">
+                                <button onclick="register($('#id_alias').val(),$('#id_nombre').val())" class="btn btn-outline-primary" type="button">Registrar mi nombre en Armonía</button>
+                            </div>
+                        </div>
+                        <div class="mb-3 p-2 alert alert-danger" cai-visible="app.wallet.settings.gas < 0.05">
+                            No Tienes suficiente gasolina para ejecutar la transacion , Espera a la llegada de esta o solicitala a la comunidad
+                        </div>
+
+                      </li>
+
+                    </ul>
+
+                    <div class="row">
+                        <div class="col col-12 d-grid gap-2 p-2">
+                            <button onclick="del_local()" class="btn btn-outline-success" type="button">Quiero borrar mi pasaporte</button>
+                    
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-12 d-grid gap-2 p-2">
+                            <button onclick="openScan()" class="btn btn-outline-success" type="button">Quiero verlo en la Blockchain</button>
+                    
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-12 d-grid gap-2 p-2">
+                            <button onclick="app.wallet.export()" class="btn btn-outline-success" type="button">Quiero exportar mi pasaporte</button>
+
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+                </div>
+            </div>
+
+            <div style="display:none" class="alert alert-success" cai-visible="app.wallet.settings.status == 2 " >
+                <center>Bienvenido <b cai-eval="(app.user)?app.user.name:'ciudadano'"></b></center>
+                <p>Tu nivel de acceso es <b>2</b> Puedes comunicarte de una manera segura con el colectivo y realizar transacciones pero todavia no recibiras notificaciones pues no has registrado el modo de comunicarte contigo</p>
+                <div class="row">
+                    <div class="col col-12 d-grid gap-2 p-2">
+                        <button onclick="app.dlg.modalmsg({title:'Modulo no disponible en demo' , msg:'La información que iria aqui (p.e. mail , tlf ) sería privada y por lo tanto esta desactivada en la demo'})" class="btn btn-outline-success" type="button">Quiero registar mis notificaciones</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col col-12 d-grid gap-2 p-2">
+                        <button onclick="detRecord('passport')" class="btn btn-outline-success" type="button">Quiero ver mi pasaporte</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-12 d-grid gap-2 p-2">
+                        <button onclick="openScan()" class="btn btn-outline-success" type="button">Quiero ver mi registro en la Blockchain</button>
+                
+                    </div>
+                </div>
+
+            </div>
+
+    </span>
+
+    <script>
+        function openScan(){
+            window.open('https://polygonscan.com/address/'+app.wallet.addr(),'_blank').focus()
+        }
+        async function register(alias,nombre){
+            if(await checkDuplicate(alias)){
+                app.dlg.modalmsg({title:'Alias duplicado', msg: 'El alias '+alias +' ya esta en el sistema , elija otro '})
+            }else{
+                app.arm.PER_register( alias,nombre );
+            }
+
+        }
+
+
+        async function checkDuplicate(alias){
+            return await app.arm.PER_AliasToAddr(alias) != "0x0000000000000000000000000000000000000000"
+        }
+
+
+        async function del_local(sel){
+            if(await app.dlg.yesno({title:"Borrado de un pasaporte" , msg:"¿Deseas eliminar el pasaporte del navegador ?"})){
+                app.wallet.delete_local();
+            }
+
+        
+        }
+
+
+        (async function(){
+            var objs = $("[cai-visible]");
+            objs.each((i,e)=>{
+                var lRet = eval($(e).attr("cai-visible"));
+                if(lRet){
+                    $(e).show()
+                }else{
+                    $(e).hide()
+                } 
+            })
+
+ 
+
+        })()
+
+        $('#id_nombre').on('input', function() { 
+            var value = $(this).val();
+            value = value.trim().toLowerCase();
+            value = value.replaceAll(" ", '_');
+            value = value.replace(/[^a-z _ 0-9]+/i, '');
+            if (value.length > 25) value = value.substring(0, 25); 
+            $('#id_alias').val(value);
+
+        });
+
+        $( "[cai-paste]" ).clippaste();
+
+
+    </script>
+        
+        
+        

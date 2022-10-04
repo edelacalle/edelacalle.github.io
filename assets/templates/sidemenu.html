@@ -1,0 +1,34 @@
+<nav id="sidebarMenu" style="margin-top: 58px; margin-bottom: 58px;"  class="collapse d-lg-block sidebar bg-white p-2">
+    <div class="position-sticky">
+      <div class="list-group list-group-flush mx-3 mt-4">
+        <a href="javascript:navigate('home')" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+          <i class="bi bi-house me-3"></i><span>Inicio</span>
+        </a>
+        <a  href="javascript:navigate('allperson')" class="list-group-item list-group-item-action py-2 ripple">
+          <i class="bi bi-people me-3"></i>
+          <span>Ciudadanos</span>
+        </a>
+          <a href="javascript:navigate('comunidades')" class="list-group-item list-group-item-action py-2 ripple"><i
+            class="bi-boxes me-3"></i><span>Comunidades</span></a>
+       
+        <a  href="javascript:navigate('passport')" 
+            class="list-group-item list-group-item-action py-2 ripple"
+            cai-exec = "(app.wallet.status == 0 ) ? $(e).addClass('disabled') :  $(e).addClass('enabled')"
+            >
+          <i class="bi bi-person-badge-fill me-3"></i><span>Mi Pasaporte</span></a>
+
+         
+        <a href="javascript:navigate('settings')" class="list-group-item list-group-item-action py-2 ripple"><i
+              class="bi-gear me-3"></i><span>Configuracion</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    (async function(){
+      objs = $("[cai-exec]");
+      objs.each((i,e) => {
+        eval($(e).attr("cai-exec"));
+      })
+    })()
+  </script>

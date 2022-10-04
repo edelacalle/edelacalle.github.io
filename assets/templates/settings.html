@@ -1,0 +1,56 @@
+<div class="card full-height">
+    <div class="card-header">
+      <center>Configuracion</center>
+    </div>
+    <form>
+      <div class="mb-3">
+        <label for="walletType" class="form-label">Tipo de Billetera Electronica</label>
+        <select id="walletType" class="form-select disabled" aria-label="Default select example">
+          <option value="metamask" xdisabled >Metamask</option>
+          <option value="passport" selected >Pasaporte Armonia</option>
+        </select>
+        <div id="walletHelp" class="form-text">Seleccione el modo de conectar el monedero.</div>
+      </div>
+      <div class="mb-3">
+        <label for="network" class="form-label">Red BlockChain</label>
+        <select id="network" class="form-select" aria-label="Default select example">
+          <option value="eth" disabled >Ethereum</option>
+          <option value="mumbai" disabled>Mumbai</option>
+          <option value="hardhat" disabled >Hardhat</option>
+          <option value="polygon" >Polygon</option>
+        </select>
+        <div id="networkHelp" class="form-text">Elija la red BlockChain.</div>
+      </div>
+
+  
+
+    </form>
+    <button onclick="reset()" class="btn btn-danger">Borrar los datos locales </button>
+
+</div>
+<script>
+  //var cfg = localStorage.getItem(cLocalCfg);
+  //var jCfg = JSON.parse(cfg);
+  async function reset(){
+    if( await app.dlg.yesno({msg:"¿Desea borrar los datos del pasaporte de este ordenador  ? "})){
+      localStorage.clear();
+      location.reload();
+    }
+  }
+
+  $("#walletType").on("change", 
+      function(e, clickedIndex, newValue, oldValue) {
+        jCfg.walletType = this.value;
+        localStorage.setItem(cLocalCfg , JSON.stringify(jCfg));
+        location.reload();
+        
+  });
+ 
+  $('#network').trigger('polygon');
+ // $('#walletType').trigger('passport');
+
+  $('#walletType').val(jCfg.walletType);
+</script>
+
+
+

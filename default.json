@@ -1,0 +1,84 @@
+{
+    "title":"Pass v:0.1",
+    "walletType":"passport",
+    "addr":"",
+    "network":"matic",
+    "networks":{
+        "matic":{
+            "mode":"rpc",
+            "urlRpc": "https://polygon-mainnet.infura.io/v3/95ecc44aba804f24838a8c6e59d219d0",
+            "chainId": 137,
+            "contracts":{
+                "CaiLookup":{
+                    "name":"CaiLookup",
+                    "address":"0x80465fe3A77B389D5b159e705aFe43C1F82DF7fA",
+                    "abifile":"https://data.armonia.ltd/contracts/CaiLookup.json"    
+                },
+                "AmbrosiaCoin":{
+                    "name":"AmbrosiaCoin",
+                    "address":"0x06df462DE8988125feE65f66804BeC803e86F495",
+                    "abifile":"https://data.armonia.ltd/contracts/AmbrosiaCoin.json"    
+                },
+                "diamond":{
+                    "name":"Diamond",
+                    "address":"0x509bB2Da80f7a0b626153435E8311CAC14cBD6B1",
+                    "abifile":"assets/abi/DiamondABI.json"
+                }
+            }
+
+        },
+        "mumbai":{
+            "mode":"wss",
+            "urlRpc":"https://matic.getblock.io/testnet/?api_key=3de48e2b-fb36-4055-ac92-0516ffb73b99",
+            "xwssRpc":  "wss://matic.getblock.io/testnet/?api_key=3de48e2b-fb36-4055-ac92-0516ffb73b99",
+            "wssRpc":"wss://polygon-mumbai.g.alchemy.com/v2/BD8celJgXRmjZnVGgUsqGlZ69YYjvysC",
+
+            "eip1559":"https://gasstation-mumbai.matic.today/v2",
+            "chainId":80001,
+			"scan":"https://mumbai.polygonscan.com/",
+			"contracts":{
+                "CaiLookup":{
+                    "name":"CaiLookup",
+                    "address":"0xf37F9b99903A3F96419BEd39664cFab4c9Dce7Ec",
+                    "abifile":"https://data.armonia.ltd/contracts/CaiLookup.json"    
+                },
+                "AmbrosiaCoin":{
+                    "name":"AmbrosiaCoin",
+                    "address":"0x6302FccC60287c0f07af8Bed50A1D81193F0857c",
+                    "abifile":"https://data.armonia.ltd/contracts/AmbrosiaCoin.json"    
+                },
+                "diamond":{
+                    "name":"Diamond",
+                    "address":"0xbDDD000b7d0b519797A957E78177ce235d7e6287",
+                    "abifile":"assets/abi/DiamondABI.json"
+                }
+            }
+
+        },
+        "hardhat":{
+            "urlRpc":"http://localhost:8545/",
+            "chainId":1337,
+			"contracts":{
+                "CaiLookup":{
+                    "name":"CaiLookup",
+                    "address":"0x663F3ad617193148711d28f5334eE4Ed07016602",
+                    "abifile":"https://data.armonia.ltd/contracts/CaiLookup.json"    
+                },
+                "AmbrosiaCoin":{
+                    "name":"AmbrosiaCoin",
+                    "address":"0x5FbDB2315678afecb367f032d93F642f64180aa3",
+                    "abifile":"https://data.armonia.ltd/contracts/AmbrosiaCoin.json"    
+                },
+                "diamond":{
+                    "name":"Diamond",
+                    "address":"0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+                    "abifile":"assets/abi/DiamondABI.json"
+                }
+            }
+
+        }
+
+    },
+    "offchain" :"https://data.armonia.pub/"
+
+}

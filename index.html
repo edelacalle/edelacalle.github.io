@@ -1,7 +1,220 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<!doctype html>
+<html lang="es" class="full-height">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-pincode-input/css/bootstrap-pincode-input.css">
+    
+    <link href="main.css" rel="stylesheet" >
+   
+    <title>Pasaporte Armonía</title>
+  </head>
+
+  <body class="full-height">
+
+    <div id="caiWallet"></div>
+    <div id="caiArmonia"></div>
+   
+    <header>
+        <div id="tpl-head"></div>
+        <div id="tpl-sidemenu"></div>
+    </header>
+
+    <main>
+        <div class="container-fluid fill-height  p-2">
+            <div id="caiDialog"></div>
+            <div id="loader-wrapper">
+                <div class="loader"></div>
+            </div>
+            <div id="tpl-content"></div>
+        </div>
+    </main>
+    
+    <script src="assets/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="assets/vendors/bootstrap/dist/js/bootstrap.bundle.min.js" ></script>
+    <script src="assets/vendors/jquery.loadtemplate/dist/jquery.loadTemplate.min.js" ></script>
+    <script src="assets/vendors/ethers/dist/ethers.umd.min.js" type="text/javascript"></script>
+    <script src="assets/vendors/eth-crypto/eth-crypto.js" type="text/javascript"></script>
+    <script src="assets/vendors/bootstrap-pincode-input/js/bootstrap-pincode-input.js"></script>
+
+    <script src="assets/js/cai.plugin.dialog.js" ></script>
+    <script src="assets/js/cai.plugin.clipboard.js" ></script>
+    <script src="assets/js/cai.plugin.clippaste.js" ></script>
+    <script src="assets/js/cai.plugin.wallet1.js" ></script>
+    <script src="assets/js/cai.plugin.walletmeta.js" ></script>
+    
+    <script src="assets/js/cai.plugin.armonia1.js" ></script>
+
+    <script>
+        const cLocalCfg = 'local';
+        var jCfg = {};
+        var app = {
+            dlg: null, 
+            wallet:null,
+            arm:null,
+            user:null
+        };
+        var provider;
+
+        (async function(){
+            
+            jCfg = localStorage.getItem(cLocalCfg);
+            if(!jCfg){
+                var response = await fetch('default.json');
+                jCfg = await response.json();
+                localStorage.setItem(cLocalCfg,JSON.stringify( jCfg) );
+            }else{
+                jCfg = JSON.parse(jCfg);
+            }
+
+            var jNet = jCfg.networks[jCfg.network] ;
+            if(jNet.mode=="wss"){
+                provider = new ethers.providers.WebSocketProvider(jNet.wssRpc);
+            }else{
+                provider = new ethers.providers.StaticJsonRpcProvider( jNet.urlRpc, { chainId: jNet.chainId, name: jCfg.network });
+            }
+
+            var jAbi = await $.get( jNet.contracts["diamond"]["abifile"]);
+
+            $("#tpl-head").loadTemplate("assets/templates/head.html",{title:jCfg.title}, {async:false});
+            $("#tpl-sidemenu").loadTemplate("assets/templates/sidemenu.html", {async:false})
+
+            $("#tpl-content").loadTemplate("assets/templates/home.html", {async:false})
+
+            eDlg = $( "#caiDialog" ).dialog();
+
+
+            eArm = $( "#caiArmonia" ).armonia({
+                onError: (e)=> app.dlg.msg('danger','Ha ocurrido un error '+e),
+                onRegister: async (e) => { 
+                    eDlg.show();
+                    await app.dlg.modalmsg({title:'Registro', msg:'El nombre <b>'+e+'</b> ha sido registrado'});
+                    //app.wallet.update()
+                    //$("#tpl-content").loadTemplate("assets/templates/home.html", {async:true});
+                    location.reload();
+                },
+                address: jNet.contracts["diamond"]["address"],
+                jAbi: jAbi.abi,
+                provider: provider
+            });
+          
+            
+            app.arm = eArm.data("armonia");
+
+            if(jCfg.walletType=="metamask" && !window.ethereum){
+                jCfg.walletType="passport";
+                alert("no puedes elegir Metamask sin instalar las extensiones ")
+                
+            }
+
+               
+            if(jCfg.walletType=="metamask"){
+                ethereum.on('accountsChanged', (accounts) => {
+                    app.wallet.setAddress(accounts[0]);
+                });
+
+                eWallet = $( "#caiWallet" ).walletMeta({
+                    w: '#w_Wallet',
+                    provider: new ethers.providers.Web3Provider(window.ethereum, "any"),
+                    onOpen: async (oW) => {
+                        app.user = await app.arm.findUser(app.wallet.settings.addr);
+                        if(app.user && app.user.active){
+                            app.wallet.settings.status = WalletStatusMeta.register;
+                        }else{
+                            app.wallet.settings.status = WalletStatusMeta.wallet;
+                        }
+                        app.wallet.update();
+                    }
+                });
+                app.wallet = eWallet.data("walletMeta");
+            
+            }else{
+                eWallet = $( "#caiWallet" ).wallet({
+                w: '#w_Wallet',
+               // onPin: async () => await app.dlg.pin(),
+               // onSave: async () => await app.dlg.msg("success", "pasaporte grabado"),
+                onPin: () => '',
+                onSave:() => {},
+                onCreate: async (wallet)=>{ 
+                    $.get('https://faucet.armonia1.workers.dev?addr='+ app.wallet.settings.wallet.address );
+                    app.wallet.save_local() 
+                },
+                onOpen: async (oW) => {
+                    app.wallet.connect(provider);
+                    app.arm.setWallet( app.wallet, oW)
+                    app.user = await app.arm.findUser(app.wallet.settings.wallet.address);
+                    if(app.user){
+                        app.wallet.settings.status = WalletStatus.register;
+                        }else{
+                            app.wallet.settings.status = WalletStatus.wallet;
+                    }
+                    //plugin.settings.oWallet.settings.status = WalletStatus.register;
+
+                    $("#tpl-content").loadTemplate("assets/templates/home.html");
+                    $("#tpl-sidemenu").loadTemplate("assets/templates/sidemenu.html");
+                    app.wallet.update()
+
+                },
+                onValue: async () => await app.dlg.prompt({title:"Clave Seguridad", msg:"Elige una clave para exportar la billetera"}),
+                //onCobro: ()=> { app.dlg.msg( 'success','Has recibido el gas necesario para realizar algunas transacciones') ; app.wallet.update()},
+                //onPago:  ()=> { app.dlg.msg( 'warning','Has pagado tu transaccion' )  ; app.wallet.update() },
+                onCobro:() => {app.wallet.update()},
+                onPago:() => {app.wallet.update()},
+            });
+            app.wallet = eWallet.data("wallet");
+
+            }
+            
+
+
+            
+
+
+            app.dlg = eDlg.data("dialog");
+           
+            
+            
+            if(!localStorage.getItem('lVisibleDisclaim') || localStorage.getItem('lVisibleDisclaim') == "true"  ){
+                var pp = await app.dlg.disclaim();
+                localStorage.setItem('lVisibleDisclaim', pp)
+
+            }
+
+            if(localStorage.getItem('wallet')){
+                app.wallet.load_local();
+            }
+
+
+            $("#loader-wrapper").fadeOut(700);
+        })() 
+
+        function detRecord(cPage, rec ){
+            $("#tpl-content").loadTemplate("assets/templates/"+cPage+".html", rec)
+        }
+        function navigate(cPage ){
+            $("#tpl-content").loadTemplate("assets/templates/"+cPage+".html")
+        }
+
+        async function clipboardPaste(sel){
+            navigator.clipboard.readText().then(function(data) {
+                $(sel).val(data);
+            });
+        }
+        async function clipboardCopy(value){
+            //var copyText = document.getElementById(sel).value;
+            navigator.clipboard.writeText(value).then(function(data) {
+                console.log("copiado al clipboard", value)
+            });
+        }
+
+    
+    
+    
+    
+    </script>
+  </body>
 </html>

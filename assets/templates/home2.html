@@ -1,0 +1,240 @@
+    <style>
+            .custom-file-button input[type=file] {
+                margin-left: -2px !important;
+            }
+
+            .custom-file-button input[type=file]::-webkit-file-upload-button {
+                display: none;
+            }
+
+            .custom-file-button input[type=file]::file-selector-button {
+                display: none;
+            }
+
+            .custom-file-button:hover label {
+                xbackground-color: #dde0e3;
+                xxbackground-color: red;
+                cursor: pointer;
+            }
+    </style>
+    <span id="id_index2">        
+            <div class="alert alert-info">
+                <center>Acceso al pasaporte armonia</center>
+              
+            </div>
+     
+
+            <div style="display:none" class="alert alert-warning" cai-visible="app.wallet.settings.status == 0 ">
+                <center><b>No detecto ningun pasaporte almacenado en este navegador</b></center>
+                <p>Tu nivel de acceso es <b>0</b> , con este nivel solo puedes acceder a la parte publica de la Comunidad</p>
+            
+                <div class="list-group">
+                    <div class="row">
+                        <div class="col col-12 d-grid gap-2 p-2">
+                            <button onclick="app.wallet.create()" class="btn btn-outline-success" type="button">Quiero crear un pasaporte</button>
+                        </div>
+                        <div class="col col-12 d-grid gap-2 p-2">
+                            <button  class="btn btn-outline-success" type="button">
+                                Quiero Importar un pasaporte
+                                <div class="input-group custom-file-button">
+                                    <label class="input-group-text" for="inputGroupFile">
+                                        <i class="bi bi-filetype-json"></i>
+                                    </label>
+                                    <input type="file" class="form-control btn btn-warning" id="inputGroupFile" role="button"  onchange="app.wallet.import_json(this)" >
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col col-12 d-grid gap-2 p-2">
+                            <button  class="btn btn-outline-success" type="button">
+                                Tengo una clave privada
+                                <div class="input-group">
+                                    <label  onclick="paste('#id_index2 #id_prvK')"  class="input-group-text" >
+                                        <i class="bi bi-clipboard"></i>
+                                    </label>
+                                    <input role="button"
+                                        id="id_prvK"
+                                        type="text" 
+                                        class="form-control btn btn-outline-warning"
+                                        placeholder="Introduce tu clave privada"
+                                        onchange="app.wallet.create(this.value)"
+                                    />
+                                    
+                                    <label class="input-group-text" onclick="app.wallet.create($('#id_index2 #id_prvK').val())"">
+                                        <i class="bi bi-send"></i>
+                                    </label>
+                                    
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col col-12 d-grid gap-2 p-2" >
+                            <button  class="btn btn-outline-success disabled" type="button">Tengo un sistema biometrico</button>
+                        </div>
+
+                    </div>
+
+
+
+
+     
+                </div>
+            
+                
+      
+            </div>
+
+            <div style="display:none" class="alert alert-info" cai-visible="app.wallet.settings.status == 1 ">
+                <center><b>Dispones de un pasaporte , pero aun no lo tienes sellado</b></center>
+                
+
+                <p>Gas:  [<span cai-eval-sync="app.wallet.gas()" >dddd</span>]</p>
+                <p>Addr: <span cai-eval="app.wallet.abbr()" ></span></p>
+
+                <p>Tu nivel de acceso es <b>1</b> , con este nivel puedes comunicarte con la Comunidad de una manera segura , pero no puedes participar en las votaciones</p>
+                <div class="list-group ">
+         
+                    <div class="row">
+                        <div class="col col-12 d-grid gap-2 p-2">
+                            <button onclick="del_local()" class="btn btn-outline-success" type="button">Quiero borrar mi pasaporte</button>
+                    
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-12 d-grid gap-2 p-2">
+                            <button onclick="openScan()" class="btn btn-outline-success" type="button">Quiero verlo en la Blockchain</button>
+                    
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-12 d-grid gap-2 p-2">
+                            <button onclick="app.wallet.export()" class="btn btn-outline-success" type="button">Quiero exportar mi pasaporte</button>
+
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+
+                <div  >
+                    <h4><center>Quiero registrar mi nombre en la comunidad</center></h4>
+                    <ul class="list-group list-group-flush">
+     
+
+                    <li class="list-group-item">
+                        <div class="mb-3 p-2" >
+                          <label  class="form-label">Nombre</label>
+                          <input 
+                            id="id_nombre"
+                            type="text" 
+                            class="form-control"
+                            onchange="console.log('cambio',this.value)"
+                            
+                          >
+                
+                        </div>
+                
+                      </li>
+                
+                      <li class="list-group-item">
+                        <div class="mb-3 p-2">
+                          <label  class="form-label">Alias</label>
+                          <input 
+                            type="text" 
+                            disabled="true"
+                            id="id_alias"
+                            class="form-control"
+                      
+                          >
+                
+                        </div>
+                
+                      </li>
+                      <li class="list-group-item">
+                        <div class="mb-3 p-2" cai-visible="app.wallet.settings.gas > 0.049">
+                            <button onclick="app.arm.PER_register($('#id_alias').val(),$('#id_nombre').val())"">Grabar</button>
+                        </div>
+                        <div class="mb-3 p-2 alert alert-danger" cai-visible="app.wallet.settings.gas < 0.05">
+                            No Tienes suficiente gas para ejecutar la transacion
+                        </div>
+
+                      </li>
+
+                    </ul>
+
+
+                </div>
+            </div>
+
+            <div style="display:none" class="alert alert-success" cai-visible="app.wallet.settings.status == 2 " >
+                <center><b>Eres un ciudadano de Armonia</b></center>
+
+                <p>Addr: <span cai-eval="app.wallet.abbr()" ></span></p>
+                <p>Gas:  [<span cai-eval-sync="app.wallet.gas()" >dddd</span>]</p>
+                <p>Addr: <span cai-eval="app.arm.nombre" ></span></p>
+
+                <p>Tu nivel de acceso es <b>2</b> , Tus monedas son <b cai-eval="(app.user  && app.user.silver )?app.user.silver:0"> </b> con este nivel puedes ......... ,pero todavia no puedes recibir notificaciones </p>
+
+
+                <div class="list-group ">
+                    <div class="d-grid gap-2 d-md-block">
+                        <button onclick="detRecord('persona')" class="btn btn-outline-success" type="button">Quiero ver mi pasaporte</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+    </span>
+
+    <script>
+        function openScan(){
+            window.open('https://polygonscan.com/address/'+app.wallet.addr(),'_blank').focus()
+        }
+
+        async function paste(sel){
+            navigator.clipboard.readText().then(function(data) {
+                $(sel).val(data);
+            });
+        }
+        async function del_local(sel){
+            if(await app.dlg.yesno({title:"Borrado de un pasaporte" , msg:"¿Deseas eliminar el pasaporte del navegador ?"})){
+                app.wallet.delete_local();
+            }
+
+        
+        }
+
+
+        (async function(){
+            console.log(app.wallet.settings.status);
+            console.log(await app.arm.DAO_getCoin());
+            console.log(await app.arm.PER_allAlias());
+            console.log(await app.arm.PER_allAddr());
+
+
+            var objs = $("[cai-visible]");
+            objs.each((i,e)=>{
+                var lRet = eval($(e).attr("cai-visible"));
+                if(lRet){
+                    $(e).show()
+                }else{
+                    $(e).hide()
+                } 
+            })
+
+ 
+
+        })()
+
+        $('#id_nombre').on('input', function() { 
+            var value = $(this).val();
+            value = value.trim().toLowerCase();
+            value = value.replaceAll(" ", '_');
+            value = value.replace(/[^a-z _ 0-9]+/i, '');
+            if (value.length > 25) value = value.substring(0, 25); 
+            $('#id_alias').val(value);
+
+        });
+    </script>
+        
+        
+        

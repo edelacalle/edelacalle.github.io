@@ -1,0 +1,187 @@
+<div id="id_wallet"  class="card full-height ">
+    <div class="card-header">
+      <center>Wallet</center>
+    </div>
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"  onclick="oWallet.delete_local()" cai-visible="oWallet.settings.status!=0" >
+                <div class="row">
+                    <div class="col-sm-11">
+                        <label class="form-label">Eliminar Billetera (Ethereum)</label>
+                    </div>
+                    <div class="col-sm-1">
+                        <label class="col-sm-1 col-form-label"><i class="bi bi-trash"></i></label>
+                    </div>
+                    
+                </div>
+                
+            </li>
+
+            <li class="list-group-item"  onclick="oWallet.create() ; oWallet.save_local()" cai-visible="oWallet.settings.status==0" >
+                <div class="row">
+                    <div class="col-sm-11">
+                        <label class="form-label">Crear una Billetera (Ethereum)</label>
+                    </div>
+                    <div class="col-sm-1">
+                        <label class="col-sm-1 col-form-label"><i class="bi bi-cloud-download-fill"></i></label>
+                    </div>
+                    
+                </div>
+                
+            </li>
+
+
+            <li class="list-group-item"  cai-visible="oWallet.settings.status!=0">
+                <label class="form-label">Dirección Billetera</label>
+                <div class="mb-3 row">
+                    <div class="col-sm-11">
+                        <div class="cai-widget-addr"></div>
+                        <div class="cai-widget-bal"></div>
+                    </div>
+                    <label onclick="cai_CopyClipBoard($('.cai-widget-addr:first').text())" class="col-sm-1 col-form-label"><i class="bi bi-wallet" role="img" aria-label="Wallet"></i></label>
+                </div>
+
+                
+            </li>
+          
+
+            <li class="list-group-item"   cai-visible="oWallet.settings.status==0">
+                <label class="form-label">Importar una Billetera Json</label>
+                <div class="mb-3 row">
+                    <div class="col-sm-11">
+                        <input type="file" class="xinvisible" onchange="oWallet.import_json(this)">
+                    </div>
+                    <label class="col-sm-1 col-form-label"><i class="bi bi-folder" role="img" aria-label="File"></i></label>
+                </div>
+
+            </li>
+            <li class="list-group-item"  onclick="oWallet.export()"  cai-visible="oWallet.settings.status!=0">
+                <div class="row">
+                    <div class="col-sm-11">
+                        <label class="form-label">Exportar una Billetera (Descargas)</label>
+                    </div>
+                    <div class="col-sm-1">
+                        <label class="col-sm-1 col-form-label"><i class="bi bi-cloud-download-fill"></i></label>
+                    </div>
+                    
+                </div>
+                
+            </li>
+
+            <li class="list-group-item"  cai-visible="oWallet.settings.status == 0" >
+                <label class="form-label">Importar una Clave Privada</label>
+                <div class="mb-3 row">
+                    <div class="col-sm-11">
+                      <input type="xpassword" class="form-control" autocomplete="false" placeholder="Introduce la Clave Privada" onchange="oWallet.import_prvK(this.value)">
+                    </div>
+                    <label class="col-sm-1 col-form-label"><i class="bi-key" role="img" aria-label="Key"></i></label>
+                </div>
+            </li>
+            
+            <li class="list-group-item" style="display:none" cai-visible="oWallet.settings.status != 0" >
+                <label class="form-label">Dar Gas</label>
+                <div class="mb-3 row">
+                    <div class="col-sm-10">
+                      <input  
+                        id = "id_addr"
+                        class="form-control" 
+                        autocomplete="false" 
+                        value ="0x82add9395b78282e7fa39d804d7ce184077545ab" 
+                        placeholder="Introduce el destinatario"
+                        >
+                    </div>
+                    <div class="col-sm-1">
+                        <input  
+                          id="id_gas"
+                          class="form-control" 
+                          autocomplete="false" 
+                          value ="0.1" 
+                          placeholder="Cant"
+                          >
+                      </div>
+                    <div class="col-sm-1">
+                        <button class="btn" onclick="oWallet.send_Gas( $('#id_wallet #id_addr').val(),$('#id_wallet #id_gas').val() )" ><i class="bi bi-send"></i></button>
+                    </div>
+
+                    
+                </div>
+            </li>
+            <li class="list-group-item"  cai-visible="oWallet.settings.status!=0">
+                <label class="form-label">Recibir Gas</label>
+                <div class="mb-3">
+                    <ul>
+                        <li><a target="_blank" href="https://mumbaifaucet.com">Mumbai Faucet</a></li>
+                        <li><a target="_blank" href="https://faucet.polygon.technology/">Polygon Faucet</a></li>
+                        <li><a target="_blank" href="https://calibration-faucet.filswan.com/#/dashboard">Filswan Faucet</a></li>
+
+                        
+                    </ul>
+                </div>
+            </li>
+            
+  
+            
+        </ul>
+    </div>
+    <div class="card-footer">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <button onclick="oWallet.create()">Create Wallet</button>
+                <button onclick="oWallet.export()">Export Wallet</button>
+                <button onclick="oWallet.save_local()">Save Local</button>
+                <button onclick="oWallet.load_local()">Load Local</button>
+                <button onclick="oWallet.delete_local()">Remove Local</button>
+                <button onclick="oWallet.connect()">Connect</button>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    
+    switch (oWallet.settings.status) {
+      case 0:
+        $("#id_wallet #id_gas").hide()
+          
+        break;
+      case 1:
+        $("#id_wallet #id_gas").show()
+          
+          
+        break;
+      case 2:
+        $("#id_wallet #id_gas").show()
+          
+        break;
+    
+      default:
+        break;
+    }
+
+    (async function(){
+        var objs = $("[cai-visible]");
+        objs.each((i,e)=>{
+            var lRet = eval($(e).attr("cai-visible"));
+            if(lRet){
+                $(e).show()
+
+            }else{
+                $(e).hide()
+            } 
+        })
+
+        console.log("oWallet", oWallet )
+        
+        
+
+
+        oWallet.update();
+    })()
+</script>

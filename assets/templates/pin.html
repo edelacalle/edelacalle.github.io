@@ -1,0 +1,31 @@
+<div id="digitPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="digitPasswordlbl" aria-hidden="true">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog modal-sm vertical-align-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="digitPasswordlbl">Enter your four-digit password:</h4>
+                </div>
+                <div class="modal-body" >
+                        <input type="hidden" name="formType" value="confirmPassword">
+                        <div class="form-group">
+                            <div class="col-sm-5">
+                                <input name="firstdigit" id="firstdigit" class="digit" type="password" required id="firstdigit" size="1" maxlength="1">
+                                <input name="secondtdigit" class="digit" type="password" required id="firstdigit" size="1" maxlength="1">
+                                <input name="thirddigit" class="digit" type="password" required id="thirddigit" size="1" maxlength="1">
+                                <input name="fourthdigit" class="digit" type="password" required id="fourthdigit" size="1" maxlength="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3">
+                                <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
+
+                                <button type="submit" class="btn btn-default digit">Confirm</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

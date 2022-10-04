@@ -1,0 +1,92 @@
+<div class="card full-height" id="id_persona">
+    <div class="card-header">
+      <center>Detalle de la Persona</center>
+
+    </div>
+    <div class="card-header">
+      <form id="id_form">
+        <div class="mb-3">
+          <label  class="form-label">Nombre</label>
+          <input 
+            data-value="nombre"
+            data-template-bind='[{"attribute": "disabled", "value": "disabled"}]'
+            type="text" 
+            class="form-control"
+          >
+
+        </div>
+
+        <div class="mb-3">
+          <label  class="form-label">Año Nacimiento</label>
+          <input 
+            data-value="ano_nac"
+            data-template-bind='[{"attribute": "disabled", "value": "disabled"}]'
+            type="text"
+            class="form-control"
+            >
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Zona</label>
+          <input 
+            data-value="zona"
+            data-template-bind='[{"attribute": "disabled", "value": "disabled"}]'
+            type="text"
+            class="form-control"
+            >
+         
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">País</label>
+          <input 
+            data-value="pais"
+            data-template-bind='[{"attribute": "disabled", "value": "disabled"}]'
+            type="text"
+            class="form-control"
+            >
+         
+        </div>
+        
+      </form>
+ 
+    </div>
+    <div class="card-foot">
+      <button>Msg</button>
+      <button>Chat</button>
+      <button data-template-bind='[{"attribute": "disabled", "value": "disabled"}]' >Grabar cambios</button>
+    </div>
+    
+
+  </div>
+  <script>
+//$("#id_form input").attr("data-template-bind",'[{"attribute": "disabled", "value": "disabled"}]' )
+    // console.log($("#id_form input"));
+
+  // data-template-bind='[{"attribute": "disabled", "value": "disabled"}]'
+
+   // https://data.armonia.pub/personas/admin/profile.json
+   /*
+   var cUrl = jCfg["offchain"]+'personas/'+oGlobal.rec['nomalias']+'/profile.json';
+   console.log(cUrl); 
+    $.get(cUrl,(data,s,x)=>{
+      console.log(data)
+      $('#id_persona').find('#det-per-nombre').val(data.nombre);
+      $('#id_persona').find('#det-per-anonac').val(data.ano_nac);
+      $('#id_persona').find('#det-per-zona').val(data.zona);
+      $('#id_persona').find('#det-per-pais').val(data.pais);
+    })
+    .fail(function(){
+      $('#id_persona').find('#det-per-nombre').val('');
+      $('#id_persona').find('#det-per-anonac').val('');
+      $('#id_persona').find('#det-per-zona').val('');
+      $('#id_persona').find('#det-per-pais').val('');
+    
+ 
+      console.log("hay un error")
+    })
+    */
+
+   
+
+
+  </script>
+

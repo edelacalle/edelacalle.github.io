@@ -1,0 +1,56 @@
+<div class="card full-height">
+    <div class="card-header">
+      <center>Comunidades</center>
+    </div>
+
+    <ul class="list-group" id="persons">
+
+    </ul>
+  </div>
+
+
+
+  <script>
+    function compare( a, b ) {
+        if ( a.name.toUpperCase() < b.name.toUpperCase() ){
+          return -1;
+        }
+        if ( a.name.toUpperCase() > b.name.toUpperCase() ){
+          return 1;
+        }
+        return 0;
+    }
+    function redir(nomalias,addr){
+      var cUrl = jCfg["offchain"]+'personas/'+nomalias+'/profile.json';
+      
+      $.get( cUrl )
+      .done(function( data, textStatus, jqXHR ) {
+        console.log(oWallet.settings.wallet.address ,data,  data.addr)
+          data.disabled = (oWallet.settings.wallet.address !=  addr);
+          detRecord('persona', data)
+      })
+      .fail(function( jqXHR, textStatus, errorThrown ) {
+        alert("profile no encontrado")
+      });
+    }
+
+    
+
+    (async function(){
+      
+      var todos = await app.arm.COM_allAlias();
+      
+     // todos= todos.sort(compare);
+      todos.forEach(element => {
+        cAux = "app.dlg.msg('warning', 'No disponible en la demo')" ;
+        
+        $("#persons").append('<li  onclick="'+cAux+'" class="list-group-item list-group-item-action" >'+element+'</li>');
+        //var cAux = 'javascript:redir('+JSON.stringify(element)+')';
+       // var cAux = 'javascript:redir(\''+element.nomalias.trim()+'\',\''+element.addr.trim()+'\'  )';
+       // $("#persons").append('<li onclick="' + cAux  +'"  class="list-group-item list-group-item-action">'+element.name+'</li>');
+        //$("#persons").append('<li onclick="javascript:navigate(\'persona\',\' '+element.nomalias+' \')"  class="list-group-item list-group-item-action">'+element.name+'</li>');
+      });
+    })()
+
+</script>
+

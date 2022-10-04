@@ -1,0 +1,32 @@
+<div id="id_person"  class="card full-height ">
+    <div class="card-header">
+      <center>Persona</center>
+    </div>
+    <div class="card-header">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <label class="form-label">Nombre</label>
+                <div class="mb-3 row">
+                    <div class="col-sm-11">
+                        <div class="cai-widget-arm-nombre"></div>
+                    </div>
+                    <label onclick="cai_CopyClipBoard($('.cai-widget-addr:first').text())" class="col-sm-1 col-form-label"><i class="bi bi-wallet" role="img" aria-label="Wallet"></i></label>
+                </div>
+                
+            </li>
+          
+
+            
+        </ul>
+    </div>
+    <div class="card-footer">
+    </div>
+
+</div>
+
+
+<script>
+    (async function(){
+        oArm.update();
+    })()
+</script>

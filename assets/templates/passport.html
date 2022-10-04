@@ -1,0 +1,153 @@
+<div class="card full-height" id="id_passport">
+    <div class="card-header">
+      <center>Pasaporte Armonía</center>
+
+    </div>
+    <div class="card-header">
+      <form id="id_form">
+
+
+        <div class="mb-3">
+          <label  class="form-label">Direccion:</label>
+
+          <div class="input-group" cai-clipboard data-orig="#id_passport #id_address" >
+            <input 
+              id="id_address"
+              disabled = true 
+              value = ""
+              type="text" 
+              class="form-control"
+            >
+            <span id="id_copy"></span>
+          </div>
+
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Clave Privada:</label>
+          <div class="input-group" cai-clipboard data-orig="#id_passport #id_prvK" >
+            <input 
+              id="id_prvK"
+              disabled = true 
+              value = ""
+              type="text" 
+              class="form-control"
+            >
+            <span id="id_copy"></span>
+            
+          </div>
+
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Clave Publica:</label>
+          <div class="input-group" cai-clipboard data-orig="#id_passport #id_pubK" >
+            <input 
+              id="id_pubK"
+              disabled = true 
+              value = ""
+              type="text" 
+              class="form-control"
+            >
+            <span id="id_copy"></span>
+          </div>
+
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Frase de Recuperacion:</label>
+          <div class="input-group" cai-clipboard data-orig="#id_passport #id_memo">
+            <input 
+              id="id_memo"
+              disabled = true 
+              value = ""
+              type="text" 
+              class="form-control"
+            >
+            <span id="id_copy"></span>
+          </div>
+          
+
+        </div>
+        
+        
+
+        
+
+        <div class="mb-3">
+          <label  class="form-label">Gasolina</label>
+          
+          <input 
+            id="id_gas"
+            disabled = true 
+            value = ""
+            type="text" 
+            class="form-control"
+          >
+        </div>
+
+        <div class="mb-3">
+          <label  class="form-label">Nombre</label>
+          <input 
+            id="id_nombre"
+            type="text" 
+            disabled = true 
+            class="form-control"
+          >
+
+        </div>
+
+        <div class="mb-3">
+          <label  class="form-label">Alias</label>
+          <input 
+            disabled=true
+            id="id_nomalias"
+            type="text"
+            class="form-control"
+            >
+        </div>
+        
+      </form>
+ 
+    </div>
+    <div class="card-foot">
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-danger" onclick="app.wallet.delete_local()">
+              <i class="bi bi-trash"></i>
+              Borrar el Pasasporte
+            </button>
+          </div>
+          <div class="col">
+            <button class="btn btn-primary" onclick="app.wallet.export()">
+              <i class="bi bi-save"></i>
+              Exportar Pasasporte
+            </button>
+          </div>
+          
+        </div>
+
+    </div>
+    
+
+  </div>
+  <script>
+
+    (async function(){
+           app.wallet.update()
+           $('#id_passport #id_address').val(app.wallet.addr())
+           $('#id_passport #id_prvK').val(app.wallet.prvK())
+           $('#id_passport #id_pubK').val(app.wallet.pubK())
+           $('#id_passport #id_memo').val(app.wallet.memo())
+           $('#id_passport #id_gas').val(await app.wallet.gas())
+           $('#id_passport #id_nombre').val(app.user.name)
+           $('#id_passport #id_nomalias').val(app.user.nomalias)
+
+           $( "[cai-clipboard]" ).clipboard();
+           
+
+           
+        })()
+
+   
+
+
+  </script>
+

@@ -1,0 +1,118 @@
+<div id="id_addpass" class="card full-height">
+    <div class="card-header">
+      <center>Nuevo Pasaporte Armonia</center>
+    </div>
+    <div class="card-body">
+
+    <ul class="list-group list-group-flush">
+     
+        <li class="list-group-item">
+          <label class="form-label">Dirección Billetera</label>
+          <div class="mb-3 row">
+              <div class="col-sm-11">
+                  <div class="cai-widget-addr"></div>
+                  
+              </div>
+              <label onclick="cai_CopyClipBoard($('.cai-widget-addr:first').text())" class="col-sm-1 col-form-label"><i class="bi bi-wallet" role="img" aria-label="Wallet"></i></label>
+          </div>
+
+          
+      
+      </li>
+      <li class="list-group-item">
+        <li class="list-group-item">
+          <label class="form-label">Saldo Gas</label>
+          <div class="mb-3 row">
+              <div class="col-sm-11">
+                  
+                  <div class="cai-widget-bal"></div>
+              </div>
+              <label onclick="cai_CopyClipBoard($('.cai-widget-addr:first').text())" class="col-sm-1 col-form-label"><i class="bi bi-wallet" role="img" aria-label="Wallet"></i></label>
+          </div>
+          <div id="id_gas" style="display:none">
+            <li class="list-group-item" >
+              <label class="form-label">Recibir Gas</label>
+              <div class="mb-3">
+                  <ul>
+                      <li><a target="_blank" href="https://mumbaifaucet.com">Mumbai Faucet</a></li>
+                      <li><a target="_blank" href="https://faucet.polygon.technology/">Polygon Faucet</a></li>
+                      <li><a target="_blank" href="https://calibration-faucet.filswan.com/#/dashboard">Filswan Faucet</a></li>
+
+                      
+                  </ul>
+              </div>
+          </li>
+           
+          </div>
+        
+      </li>
+
+      <li class="list-group-item">
+        <div class="mb-3 p-2" >
+          <label  class="form-label">Nombre</label>
+          <input 
+            id="id_nombre"
+            type="text" 
+            class="form-control"
+            onchange="console.log('cambio',this.value)"
+            
+          >
+
+        </div>
+
+      </li>
+
+      <li class="list-group-item">
+        <div class="mb-3 p-2">
+          <label  class="form-label">Alias</label>
+          <input 
+            type="text" 
+            disabled="true"
+            id="id_alias"
+            class="form-control"
+      
+          >
+
+        </div>
+
+      </li>
+    
+      <li class="list-group-item">
+        <div class="mb-3 p-2">
+          <button onclick="oArm.PER_register($('#id_alias').val(),$('#id_nombre').val())"">Grabar</button>
+        </div>
+        
+      </li>
+    </ul>
+    </div>
+  </div>
+
+  
+
+<script>
+  $('#id_nombre').on('input', function() { 
+    var value = $(this).val();
+    value = value.trim().toLowerCase();
+    value = value.replaceAll(" ", '_');
+    value = value.replace(/[^a-z _ 0-9]+/i, '');
+    if (value.length > 25) value = value.substring(0, 25); 
+    $('#id_alias').val(value);
+
+  });
+
+  function updAlias(name){
+      $('#id_alias').val('pepe');
+        console.log('cabmio ', name)
+
+  }
+  (async function(){
+    
+
+  
+    if(oWallet.settings.balance < 0.09 ){
+      $("#id_addpass #id_gas").show()
+    }
+      oWallet.update();
+  })()
+</script>
+
