@@ -1,0 +1,17 @@
+{
+    "0x01000001":{"msg":"AddMemberV1"},
+    "0x01000002":{"msg":"DelMemberV1"},
+    "0x01050006":{"msg":"CreateUsuarioV1"},
+    "0x01050015":{"msg":"CreateComunidadV1"},
+    "0x01090020":{"msg":"AddComunidad"},
+   
+    "0x01090030":{"msg":"AddUsuario"},
+    "0xf8ec3abc":{"msg":"AddLog"},
+   
+    "55575":{"msg":"members.duplicate"},
+    "51703":{"msg":"members.notmember"},
+    "42015":{"msg":"require.nosaldo"},
+    "16934":{"msg":"require.userexist"}
+    
+  
+}

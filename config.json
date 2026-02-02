@@ -1,0 +1,26 @@
+{
+    "version":"0.0.1",
+    "i18n":{
+        "fallbackLng": "es",
+        "interpolation": {"escapeValue": false},
+        "resources": {},
+        "languages":["en","es"]
+    },
+    "fees":{
+        "CreateComunidadV1":"2.0",
+        "CreateUsuarioV1":"0.1"
+    },
+    "explorer":"https://testnet.tonviewer.com/",
+    "wallet":"demowallet.json",
+    "messages":"messages.json",
+    "intervals":{
+        "reload_config":50000
+    },
+    "ipfs":{
+        "protocol":"https://",
+        "gateway":"chocolate-key-swift-271.mypinata.cloud",
+        "endpoint":"ipfs"
+    }
+  
+
+}
