@@ -1,0 +1,35 @@
+{
+    "title":"Armonia",
+    "gremios":[
+        {"alias":"grm.arm"  , "title":"Armonia DAO" },
+        {"alias":"grm.edu"  , "title":"Educación y Formación" },
+        {"alias":"grm.ocio" , "title":"Hobby,Ocio" },
+        {"alias":"grm.pro"  , "title":"Profesional" },
+        {"alias":"grm.ind"  , "title":"Industrial" }
+    ],
+    "comunidades":[
+         {"alias":"com.arm.dao"       , "gremio":"grm.arm",  "title":"Armonia Fundation"   }
+        ,{"alias":"com.arm.app"       , "gremio":"grm.arm",  "title":"Armonia Application" }
+        ,{"alias":"com.arm.eco"       , "gremio":"grm.arm",  "title":"Armonia Economics"   }
+        ,{"alias":"com.arm.soc"       , "gremio":"grm.arm",  "title":"Armonia Social"      }
+        ,{"alias":"com.edu.ed1"       , "gremio":"grm.edu",  "title":"English"             }
+        ,{"alias":"com.edu.ed2"       , "gremio":"grm.edu",  "title":"Francais"            }
+        ,{"alias":"com.edu.ed3"       , "gremio":"grm.edu",  "title":"Español"             }
+        ,{"alias":"com.edu.it"        , "gremio":"grm.edu",  "title":"Informática IT"      }
+        
+        ,{"alias":"com.ocio.chess"    , "gremio":"grm.ocio", "title":"Ajedrez"             }
+        ,{"alias":"com.ocio.music"    , "gremio":"grm.ocio", "title":"Musica"              }
+        ,{"alias":"com.ocio.leer"     , "gremio":"grm.ocio", "title":"Literatura"          }
+        ,{"alias":"com.pro.asesoria"  , "gremio":"grm.pro",  "title":"Asesoria"            }
+    ],
+    "talleres":[
+         {"alias":"und.arm.dao.const" , "comunidad":"com.arm.dao",  "title":"Constitucion Armonia" }
+        ,{"alias":"und.arm.app.web"   , "comunidad":"com.arm.app",  "title":"Web Armonia"  }
+        ,{"alias":"und.arm.app.web"   , "comunidad":"com.arm.app",  "title":"Data Armonia" }
+        ,{"alias":"und.arm.app.game"  , "comunidad":"com.arm.app",  "title":"Game Armonia" }
+        ,{"alias":"und.arm.app.ambr"  , "comunidad":"com.arm.app",  "title":"Tokenomics Armonia" }
+        
+        
+
+    ]
+}
