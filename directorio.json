@@ -12,6 +12,8 @@
         ,{"alias":"com.arm.app"       , "gremio":"grm.arm",  "title":"Armonia Application" }
         ,{"alias":"com.arm.eco"       , "gremio":"grm.arm",  "title":"Armonia Economics"   }
         ,{"alias":"com.arm.soc"       , "gremio":"grm.arm",  "title":"Armonia Social"      }
+        ,{"alias":"com.com1"          , "gremio":"grm.arm",  "title":"Pruebas Armonia"      }
+        
         ,{"alias":"com.edu.ed1"       , "gremio":"grm.edu",  "title":"English"             }
         ,{"alias":"com.edu.ed2"       , "gremio":"grm.edu",  "title":"Francais"            }
         ,{"alias":"com.edu.ed3"       , "gremio":"grm.edu",  "title":"Español"             }
@@ -21,6 +23,8 @@
         ,{"alias":"com.ocio.music"    , "gremio":"grm.ocio", "title":"Musica"              }
         ,{"alias":"com.ocio.leer"     , "gremio":"grm.ocio", "title":"Literatura"          }
         ,{"alias":"com.pro.asesoria"  , "gremio":"grm.pro",  "title":"Asesoria"            }
+        ,{"alias":"com.pro.apps"      , "gremio":"grm.pro",  "title":"Aplicaciones"        }
+        
     ],
     "talleres":[
          {"alias":"und.arm.dao.const" , "comunidad":"com.arm.dao",  "title":"Constitucion Armonia" }
@@ -28,6 +32,8 @@
         ,{"alias":"und.arm.app.web"   , "comunidad":"com.arm.app",  "title":"Data Armonia" }
         ,{"alias":"und.arm.app.game"  , "comunidad":"com.arm.app",  "title":"Game Armonia" }
         ,{"alias":"und.arm.app.ambr"  , "comunidad":"com.arm.app",  "title":"Tokenomics Armonia" }
+        ,{"alias":"und.arm.app.game"  , "comunidad":"com.arm.app",  "title":"Game Armonia" }
+        ,{"alias":"und.arm.app.contablock"  , "comunidad":"com.pro.apps",  "title":"ContaBlock"  }
         
         
 
