@@ -11,7 +11,8 @@
     "55575":{"msg":"members.duplicate"},
     "51703":{"msg":"members.notmember"},
     "42015":{"msg":"require.nosaldo"},
-    "16934":{"msg":"require.userexist"}
+    "16934":{"msg":"require.userexist"},
+    "15448":{"msg":"require.duplicate"}
     
   
 }

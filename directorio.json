@@ -12,7 +12,7 @@
         ,{"alias":"com.arm.app"       , "gremio":"grm.arm",  "title":"Armonia Application" }
         ,{"alias":"com.arm.eco"       , "gremio":"grm.arm",  "title":"Armonia Economics"   }
         ,{"alias":"com.arm.soc"       , "gremio":"grm.arm",  "title":"Armonia Social"      }
-        ,{"alias":"com.com1"          , "gremio":"grm.arm",  "title":"Pruebas Armonia"      }
+        ,{"alias":"com.com1"          , "gremio":"grm.arm",  "title":"Pruebas Armonia"     }
         
         ,{"alias":"com.edu.ed1"       , "gremio":"grm.edu",  "title":"English"             }
         ,{"alias":"com.edu.ed2"       , "gremio":"grm.edu",  "title":"Francais"            }
@@ -27,15 +27,17 @@
         
     ],
     "talleres":[
-         {"alias":"und.arm.dao.const" , "comunidad":"com.arm.dao",  "title":"Constitucion Armonia" }
-        ,{"alias":"und.arm.app.web"   , "comunidad":"com.arm.app",  "title":"Web Armonia"  }
-        ,{"alias":"und.arm.app.web"   , "comunidad":"com.arm.app",  "title":"Data Armonia" }
-        ,{"alias":"und.arm.app.game"  , "comunidad":"com.arm.app",  "title":"Game Armonia" }
-        ,{"alias":"und.arm.app.ambr"  , "comunidad":"com.arm.app",  "title":"Tokenomics Armonia" }
-        ,{"alias":"und.arm.app.game"  , "comunidad":"com.arm.app",  "title":"Game Armonia" }
-        ,{"alias":"und.arm.app.contablock"  , "comunidad":"com.pro.apps",  "title":"ContaBlock"  }
-        
-        
-
+         {"alias":"und.arm.dao.const"    , "comunidad":"com.arm.dao",  "title":"Constitucion Armonia" }
+        ,{"alias":"und.arm.app.web"      , "comunidad":"com.arm.app",  "title":"Web Armonia"  }
+        ,{"alias":"und.arm.app.web"      , "comunidad":"com.arm.app",  "title":"Data Armonia" }
+        ,{"alias":"und.arm.app.game"     , "comunidad":"com.arm.app",  "title":"Game Armonia" }
+        ,{"alias":"und.arm.app.ambr"     , "comunidad":"com.arm.app",  "title":"Tokenomics Armonia" }
+        ,{"alias":"und.arm.app.game"     , "comunidad":"com.arm.app",  "title":"Game Armonia" }
+        ,{"alias":"und.arm.eco.boveda1"  , "comunidad":"com.arm.eco",  "title":"Boveda I"  }
+        ,{"alias":"und.arm.app.boveda2"  , "comunidad":"com.arm.eco",  "title":"Boveda II"  }
+        ,{"alias":"und.arm.app.boveda3"  , "comunidad":"com.arm.eco",  "title":"Boveda III"  }
+        ,{"alias":"und.arm.app.boveda4"  , "comunidad":"com.arm.eco",  "title":"Boveda IV"  }
+        ,{"alias":"und.arm.app.boveda5"  , "comunidad":"com.arm.eco",  "title":"Boveda V"  }
+ 
     ]
 }
