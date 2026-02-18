@@ -1,5 +1,5 @@
 {
-    "version":"0.0.1",
+    "version":"0.0.2",
     "i18n":{
         "fallbackLng": "es",
         "interpolation": {"escapeValue": false},
@@ -19,7 +19,15 @@
         "protocol":"https://",
         "gateway":"chocolate-key-swift-271.mypinata.cloud",
         "endpoint":"ipfs"
+    },
+    "currentRPC":"tatum",
+    "rpcJSON":{
+         "tatum"     : {"url":"https://ton-testnet.gateway.tatum.io/jsonRPC"}
+        ,"toncenter" : {"url":"https://testnet.toncenter.com/api/v2/jsonRPC"}
+        ,"onfinality":{"url":"https://ton-testnet.api.onfinality.io/public/jsonRPC"}        
+        ,"chainstack":{"url":"https://ton-testnet.core.chainstack.com/9c641cf78754b04bffc59eee6e5c20e3/api/v2/jsonRPC"}
     }
-  
-
 }
+
+
+
