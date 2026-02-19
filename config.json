@@ -22,7 +22,8 @@
     },
     "currentRPC":"tatum",
     "rpcJSON":{
-         "tatum"     : {"url":"https://ton-testnet.gateway.tatum.io/jsonRPC"}
+         "local"     : {"url":"/rpc"}
+        ,"tatum"     : {"url":"https://ton-testnet.gateway.tatum.io/jsonRPC"}
         ,"toncenter" : {"url":"https://testnet.toncenter.com/api/v2/jsonRPC"}
         ,"onfinality":{"url":"https://ton-testnet.api.onfinality.io/public/jsonRPC"}        
         ,"chainstack":{"url":"https://ton-testnet.core.chainstack.com/9c641cf78754b04bffc59eee6e5c20e3/api/v2/jsonRPC"}
