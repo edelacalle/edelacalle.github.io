@@ -31,8 +31,8 @@
     "talleres":[
 
          {"alias":"und.arm.dao.const"    , "comunidad":"com.arm.dao",  "title":"Constitucion Armonia"   }
-        ,{"alias":"und.arm.dao.hum"      , "comunidad":"com.arm.dao",  "title":"Certifiación humanidad" }
-
+        ,{"alias":"und.arm.dao.cert_hum"      , "comunidad":"com.arm.dao",  "title":"Cert. Humanidad" }
+		,{"alias":"und.arm.dao.cert_com"      , "comunidad":"com.arm.dao",  "title":"Cert. Comunicacion }
         ,{"alias":"und.arm.app.web"      , "comunidad":"com.arm.app",  "title":"Web Armonia"  }
         ,{"alias":"und.arm.app.web"      , "comunidad":"com.arm.app",  "title":"Data Armonia" }
         ,{"alias":"und.arm.app.game"     , "comunidad":"com.arm.app",  "title":"Game Armonia" }

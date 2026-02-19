@@ -20,6 +20,9 @@
         "gateway":"chocolate-key-swift-271.mypinata.cloud",
         "endpoint":"ipfs"
     },
+    "ipns":{
+        "directorio.json":"https://ipfs.io/ipns/k51qzi5uqu5dl7v6j5xqhqqq3utty2lu2y1kvhhe9judjkf9iohxfn18yl0mdu"
+    },
     "currentRPC":"tatum",
     "rpcJSON":{
          "local"     : {"url":"/rpc"}
