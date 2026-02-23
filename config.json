@@ -8,7 +8,8 @@
     },
     "fees":{
         "CreateComunidadV1":"2.0",
-        "CreateUsuarioV1":"0.1"
+        "CreatePasaporteV1":"1.0",
+        "MePasaporteTestV1":"0.1"
     },
     "explorer":"https://testnet.tonviewer.com/",
     "messages":"messages.json",

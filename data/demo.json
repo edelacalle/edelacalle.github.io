@@ -1,0 +1,12 @@
+{
+    "wallet":{
+        "address":"EQDD1HhzHXiOgMUCcqIo8lRa1xLYcg49ApeqQq_go6nU7sLi",
+        "seed":{"saltB64":"Zm19YZF4VSuqkOh2lpaHaQ==","ivB64":"uHMf1jhdoDgKqw42","cipherB64":"duTwlL/JDukC5wyN0AlwAQ8d5PUCEDQSupPtZzSGUpFyrWZSeg3QRfl4HT0fIs8oqsfeMHeYW/xPv14HjwvPoleU+BgMNxiDAm2OQjNjAlxsyf8pK/pZQdB1+ncGdr8ZydAL9s1i4I9SsNuONmcr8CFdI3pI0eWSRijsfW5bIQ6DtovczI6o1d4JVkKbDrSCw3oOIpEypi49Wzz4ZIpRTvxp"}
+    },
+    "passport":{
+        "address":"EQA-FdC8Yq3blJyR6uElg8QEMh7Ymp0q7MRHmNueNqfIsczP",
+        "cid":"",
+        "alias":"usu0",
+        "name":"Usuario 0"
+    }
+}
