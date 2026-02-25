@@ -1,0 +1,11 @@
+{
+    "wallet":{
+        "address":"EQAu6qt9PS2k7DbFoR8XEyMGuNZ2atXwlMTSYZnOpc0UwyQQ",
+        "pubK":"3d38d9b4ba85b0ea755296a94c0f1dbb6c90065ea91704d9aa8cde3547631dba",
+        "seed":{
+            "saltB64":"IE/1p214EHBifOLqFOGSuw==",
+            "ivB64":"LRUgTUvOo1aEF8GW",
+            "cipherB64":"pzTh2N3GJEMlGhWq45jrsjp210O3nRSZDyCKN0Ue+AJgscv4pBkDpkDxDVd2w9tl8y72NEAIiuE18twMwp7QevS63uFW5qoIQ5M/gjxJ2W4KUjHhmNmrJ73Sr9wPeFxt2J0gIWP9mr/VOb7T/X5Yb46FYmitbOU0qiChS9CNy7RPPob09bt+aM5zBbVXijo3ZtHD/kRw5dALJFUu9a0Xkr74mURzqTUQfw=="
+        }
+    }
+}
