@@ -1,14 +1,19 @@
 {
-    "version":"0.0.2",
+    "version":"0.0.3",
     "i18n":{
         "fallbackLng": "es",
         "interpolation": {"escapeValue": false},
         "resources": {},
         "languages":["en","es"]
     },
+    "prefix":{
+        "Pasaporte":"pas",
+        "Comunidad":"com"
+        
+    },
     "fees":{
         "CreateComunidadV1":"2.0",
-        "CreatePasaporteV1":"1.0",
+        "CreatePasaporteV1":"1.2",
         "MePasaporteTestV1":"0.1"
     },
     "explorer":"https://testnet.tonviewer.com/",
