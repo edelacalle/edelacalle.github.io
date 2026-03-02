@@ -1,1 +1,0 @@
-window.EthCrypto = require('eth-crypto');
