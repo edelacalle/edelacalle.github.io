@@ -1,0 +1,43 @@
+{
+    "version":"0.0.5",
+    "i18n":{
+        "fallbackLng": "es",
+        "interpolation": {"escapeValue": false},
+        "resources": {},
+        "languages":["en","es"]
+    },
+    "prefix":{
+        "Pasaporte":"pas",
+        "Comunidad":"com"
+        
+    },
+    "fees":{
+        "CreateComunidadV1":"2.0",
+        "CreatePasaporteV1":"1.2",
+        "MePasaporteTestV1":"0.1"
+    },
+    "explorer":"https://testnet.tonviewer.com/",
+    "messages":"messages.json",
+    "intervals":{
+        "reload_config":50000
+    },
+    "ipfs":{
+        "protocol":"https://",
+        "gateway":"chocolate-key-swift-271.mypinata.cloud",
+        "endpoint":"ipfs"
+    },
+    "ipns":{
+        "directorio.json":"https://ipfs.io/ipns/k51qzi5uqu5dl7v6j5xqhqqq3utty2lu2y1kvhhe9judjkf9iohxfn18yl0mdu"
+    },
+    "currentRPC":"tatum",
+    "rpcJSON":{
+         "local"     : {"url":"/rpc"}
+        ,"tatum"     : {"url":"https://ton-testnet.gateway.tatum.io/jsonRPC"}
+        ,"toncenter" : {"url":"https://testnet.toncenter.com/api/v2/jsonRPC"}
+        ,"onfinality":{"url":"https://ton-testnet.api.onfinality.io/public/jsonRPC"}        
+        ,"chainstack":{"url":"https://ton-testnet.core.chainstack.com/9c641cf78754b04bffc59eee6e5c20e3/api/v2/jsonRPC"}
+    }
+}
+
+
+

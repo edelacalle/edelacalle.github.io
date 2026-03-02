@@ -1,0 +1,143 @@
+{
+    "comun":{
+        "inicio"    :"Home",
+        "requisitos":"Requirements",
+        "titulacion":"Degree",
+        "doc_identidad":"Identity Doc",
+        "nombre_apellidos":"Name and Surname",
+        "telefono":"Phone",
+        "email":"Email",
+        "expediente":"Registration",
+        "curso_academico":"Academic Course",
+        "curso":"Course",
+        "plan":"Plan",
+        "universidad":"University",
+        "matricula":"Tuition",
+        "seleccione_idioma":"select language",
+        "selecciona_tema":"select theme",
+        "cerrar":"Close",
+        "aceptar":"Accept",
+        "localidad":"[ENG] Localidad",
+        "provincia":"[ENG] Provincia",
+        "pais":"Country",
+        "centro":"Centre",
+        "adjuntar":"Attach",
+        "estas_seguro":"Are you sure?",
+        "estas_seguro_del":"[ENG]¿Estás seguro de eliminar el archivo?",
+        "estas_seguro_local":"[ENG]¿Estás seguro/a de borrar los datos locales en este ordenador?",
+        "borrado_datos_local":"[ENG] Borrado de datos Locales",
+        "borrado_datos_local_texto":"[ENG] Este proceso sirve para reiniciar la solicitud, eliminar los datos locales del navegador.<br/>¿Procedemos con el proceso?",
+        "si":"Yes",
+        "no":"No",
+        "es_prueba":"this is a test",
+        "confirmar":"Confirmation",
+        "parentesco":"Relationship",
+        "sel_parentesco":"Select Relationship",
+        "ingresos":"[ENG]Income",
+        "borrar":"[ENG]Delete",
+        "ver":"[ENG]View",
+        "identidad":"[ENG]Identity",
+        "nombre":"[ENG]Name",
+        "moneda":"[ENG]Currency",
+        "registrar":"[ENG]Register",
+        "indica_moneda":"[ENG] indica moneda",
+        "indica_ingresos":"[ENG] indica ingresos",
+        "rellena_campos":"[ENG] rellena campos antes de enviar el fichero",
+        "subir":"[ENG] Subir",
+        "cancelar":"[ENG] Cancelar",
+        "padre":"[ENG]Father",
+        "madre":"[ENG]Mother",
+        "estudiante":"[ENG]Student",
+        "otro":"[ENG]Other",
+        "importar":"[ENG]Import",
+        "exportar":"[ENG]Export",
+        "reset":"[ENG]Reset",
+        "configuracion":"[ENG]Configuration",
+        "importar_datos_local":"[ENG]Import Local Data",
+        "importar_datos_local_texto":"[ENG]Import the local data saved on the browser.",
+        "exportar_datos_local":"[ENG]Export Local Data",
+        "exportar_datos_local_texto":"[ENG]Export the local data saved on the browser."
+    
+
+
+    },
+    "app":{
+        "titulo":"Applications for EU Scholarships for the 2026/2027 Academic Year",
+        "tipo_solicitud":"Request type",
+        "bachillerato":"[ENG]Bachillerato",
+        "bachillerato_ext":"[ENG]Bachillerato Extranjero",
+        "cfgs":"[ENG]Ciclo Formativo de Grado Superior",
+        "eou":"[ENG]Estudios Oficiales Universitarios -Título Universitario",
+        "traslado_expediente":"[ENG]Traslado de Expediente"
+    },
+    "frm_noexpte":{
+        "titulo":"[ENG]Expediente no válido",
+        "texto1":"[ENG]Estimado/a {{userDisplayName}}, si estás intentando acceder y no te deja, puede ser debido a los siguientes motivos:",
+        "texto2":"[ENG]<ul><li>Actualmente el periodo de solicitud de beca se encuentra cerrado (consultar las bases).</li><li>Tu expediente no está asociado a una titulación de Grado.</li><li>Ha surgido una incidencia con el servidor de validación de expedientes. (rogamos lo intentes en unos minutos).</li></ul>",
+        "texto3":"[ENG]Puedes consultar los requisitos de la beca"
+    },
+    "frm_inicial":{
+        "solicita_tu_beca":"Apply for your scholarship",
+        "pulsa_aqui_para_comenzar_el_tramite":"Click here to begin the process",
+        "datos_expediente_academico":"Academic Record Data",
+        "estudios_solicita_beca":"Studies for which you are applying for the scholarship",
+        "fallecimiento_sustentador":"Death of the Breadwinner",
+        "marca_casilla_fallecimiento":"Check this box if you received the 'Scholarship for the Death of the Financial Controller' in the previous academic year"
+   },
+    "frm_fuera_plazo":{
+        "fuera_de_plazo":"We are not in the application period for scholarships for the 2026/2027 academic year.",
+        "plazos_becas_curso":"These are the deadlines for applying for scholarships for the 2026/2027 academic year.",
+        "plazos_becas":"<ul><li>March 15, 2026 for new admissions</li><li>June 15, 2026 for scholarship renewal</li><li>June 15, 2026 for rest</li><li>July 15, 2026, application deadline for all applicants</li></ul>"
+    },
+    "frm_no_server":{
+        "titulo":"Application is not available",
+        "header":"Maintenance Stop",
+        "detalle":"We are currently carrying out maintenance tasks, we hope that the system will be restored in a few minutes"
+
+    },
+    "frm_settings":{
+        "titulo":"Changes for local configuration"
+    },
+    "frm_borrador":{
+        "titulo":"[ENG]Borrador Solicitud Beca",
+        "datos_alumno_titulacion":"[ENG]Datos del alumno y titulación",
+        "ant_titulacion":"[ENG] Anterior titulación",
+        "ant_academico":"[ENG] Datos académicos último curso realizado",
+        "ant_nota_media":"[ENG] Nota media final de los últimos estudios realizados",
+        "ant_doc_just":"[ENG] Documentos que justifiquen el título",
+        "datos_economicos":"[ENG] Datos económicos unidad familiar"
+        
+
+    },
+    "frm_econ":{
+        "nota1": "[ENG]In case of joint taxation, indicate in parentesco the data of a single head of household",
+        "nota2": "[ENG]In case of joint taxation, indicate in identity the data of a single head of household",
+        "nota3":"[ENG]<ul><li>Debes indicar el importe total de los ingresos netos percibidos durante el último ejercicio.  </li><li>Debes adjuntar la declaración de la renta/ingresos/personas físicas o certificado de retenciones del IRPF. </li>               <li>Para rentas españolas aplicar la siguiente fórmula:  casilla 435 + casilla 460 – casilla 595</li>                    <li>Para rentas extranjeras:   Sumar la renta general + renta del ahorro - la cuota líquida total</li></ul>",
+        "adjuntar_doc":"[ENG] Adjuntar documentos que justifiquen los ingresos",
+        "registra_miembro":"[ENG] Register member of the family unit"
+        
+    },
+    "frm_poldatos":{
+        "info":"[ENG]Legal information and data protection",
+        "revisar_legales":"[ENG]Review and accept the legal conditions",
+        "cond_legales":"[ENG]Accept Legal Conditions",
+        "pol_datos":"[ENG]Accept Data Protection Policy",
+        "revisar_poldatos":"[ENG]Review and accept the data protection policy",
+        "pol_datos_header":"[ENG]DECLARE UNDER YOUR RESPONSIBILITY:",
+        "pol_datos_body":"<ul><li>Know and accept what is set out in the scholarship application and award policy</li><li>That all the data incorporated in this application are true and accurate</li><li>That the applicant is not a beneficiary of any type of economic help intended to cover the costs of education at the European University.</li></ul>",
+        "pol_datos_foot":"[ENG]I have read and accept the declaration of responsibility"
+    },
+
+    "frm_rgpd":{
+        "nota1":"[ENG]Los datos consignados en este impreso serán tratados para los fines propios de la entidad responsable del tratamiento, <b>{{oUniv.razon}}</b>,estando incluidas entre sus finalidades la gestión académica, la gestión de becas y ayudas, otras actividades varias propias de la Universidad para las cuales entrega sus datos, así como la remisión de publicidad y actividades de la Universidad que pudiera ser del interés del titular de los datos. La base para el tratamiento de los datos personales facilitados al amparo de la presente solicitud se encuentra en el desarrollo y ejecución de la relación formalizada con el titular de los mismos, así como en el cumplimiento de obligaciones legales de <b>{{oUniv.razon}}</b> y el consentimiento inequívoco del titular de los datos. Los datos facilitados en virtud de la presente solicitud se incluirán en un fichero automatizado cuyo responsable es <b>{{oUniv.razon}}</b>, con domicilio en la <b>{{oUniv.domicilio}}</b>. Asimismo, de no manifestar fehacientemente lo contrario, el titular consiente expresamente el tratamiento automatizado total o parcial de dichos datos por el tiempo que sea necesario para cumplir con los fines indicados. El titular de los datos tiene derecho a acceder, rectificar y suprimir los datos, limitar su tratamiento, oponerse al tratamiento y ejercer su derecho a la portabilidad de los datos de carácter personal, todo ello de forma gratuita, tal como se detalla en la información completa sobre protección de datos en el enlace",
+        "nota2":"[ENG]El titular de los datos autoriza expresamente el envío de comunicaciones publicitarias o promocionales por cualquier medio electrónico, sin perjuicio de que el consentimiento para la recepción de comunicaciones comerciales o promocionales puede ser revocado en cualquier momento, enviando un mensaje de correo electrónico a la dirección dpo@universidadeuropea.es indicando en el asunto la referencia 'revocación de publicidad'.",
+        "nota3":"[ENG]He leído la política de privacidad"
+    },
+    
+    
+    "frm_valida":{
+        "info":"[ENG]Validation and submission to the process",
+        "recuerda":"[ENG]Remember that if you do not click on Send Application, your application will remain in draft and the Scholarship Unit will not be able to evaluate it",
+        "envio":"[ENG]Send Application"
+    }
+}
