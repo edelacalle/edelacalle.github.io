@@ -1,0 +1,18 @@
+{
+     "com.arm.dao"  :{ "gremio":"grm.arm",  "title":"Fundación"          }
+    ,"com.arm.app"  :{ "gremio":"grm.arm",  "title":"Area aplicación"    }
+    ,"com.arm.eco"  :{ "gremio":"grm.arm",  "title":"Area económica"     }
+    ,"com.arm.soc"  :{ "gremio":"grm.arm",  "title":"Area social"        }
+    ,"com.com1"     :{ "gremio":"grm.arm",  "title":"Pruebas Armonia"    }
+    ,"com.edu.ed1"  :{ "gremio":"grm.edu",  "title":"English"            }
+    ,"com.edu.ed2"  :{ "gremio":"grm.edu",  "title":"Francais"           }
+    ,"com.edu.ed3"  :{ "gremio":"grm.edu",  "title":"Español"            }
+    ,"com.edu.it"   :{ "gremio":"grm.edu",  "title":"Informática IT"     }
+        
+    ,"com.ocio.chess":{ "gremio":"grm.ocio", "title":"Ajedrez"           }
+    ,"com.ocio.music":{ "gremio":"grm.ocio", "title":"Musica"            }
+    ,"com.ocio.leer" :{ "gremio":"grm.ocio", "title":"Literatura"        }
+    ,"com.ocio.games":{ "gremio":"grm.ocio", "title":"Juegos"            }
+    ,"com.pro.asesoria":{ "gremio":"grm.pro",  "title":"Asesoria"        }
+    ,"com.pro.apps"  :{  "gremio":"grm.pro",  "title":"Aplicaciones"     }
+}
