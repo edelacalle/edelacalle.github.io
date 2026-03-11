@@ -1,1 +1,15 @@
-{}
+{
+  "EQAAWqprlKCpSFMT1IE_aHFrM9CgvRMu5RZ_RzqmKJXpV0PI": {
+    "$$type": "ComunidadDetail",
+    "addr": "EQAAWqprlKCpSFMT1IE_aHFrM9CgvRMu5RZ_RzqmKJXpV0PI",
+    "parent": "EQBQ4eTyMKOsSfirmKv8HuqVOn7arIhBXsjviYc1yVyiYRix",
+    "addrVote": "EQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM9c",
+    "addrResolver": "EQAMzhZHqFY8zXiTpsT1o3PS6GAA0x1SIkIrJ0dBkUVvAtYP",
+    "addrAmbrosia": "EQAxoghuV3JVbVQ1tPnBOpeTI5caawUeRsoq0F-_dZvgLwi9",
+    "balance": "465419200",
+    "name": "Comunidad1",
+    "cid": "bafkreicecnx2gvntm6fbcrvnc336qze6st5u7qq7457igegamd3bzkx7ri",
+    "recPass": [],
+    "lastread": 1773154863854
+  }
+}
