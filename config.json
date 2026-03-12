@@ -1,5 +1,5 @@
 {
-    "version":"0.0.8",
+    "version":"0.0.9",
     "i18n":{
         "fallbackLng": "es",
         "interpolation": {"escapeValue": false},
