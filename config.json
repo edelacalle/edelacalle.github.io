@@ -13,7 +13,7 @@
     },
     "fees":{
         "CreateComunidadV1":"2.0",
-        "CreatePasaporteV1":"1.2",
+        "CreatePasaporteV1":"0.6",
         "MePasaporteTestV1":"0.1"
     },
     "explorer":"https://testnet.tonviewer.com/",
@@ -36,7 +36,9 @@
         ,"toncenter" : {"url":"https://testnet.toncenter.com/api/v2/jsonRPC"}
         ,"onfinality":{"url":"https://ton-testnet.api.onfinality.io/public/jsonRPC"}        
         ,"chainstack":{"url":"https://ton-testnet.core.chainstack.com/9c641cf78754b04bffc59eee6e5c20e3/api/v2/jsonRPC"}
-    }
+    },
+    "xws":"wss://api.armonia.pub/ws",
+    "ws":"ws://localhost:8787/ws"
 }
 
 
