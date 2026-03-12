@@ -1,5 +1,5 @@
 {
-    "version":"0.0.7",
+    "version":"0.0.8",
     "i18n":{
         "fallbackLng": "es",
         "interpolation": {"escapeValue": false},
@@ -37,8 +37,8 @@
         ,"onfinality":{"url":"https://ton-testnet.api.onfinality.io/public/jsonRPC"}        
         ,"chainstack":{"url":"https://ton-testnet.core.chainstack.com/9c641cf78754b04bffc59eee6e5c20e3/api/v2/jsonRPC"}
     },
-    "xws":"wss://api.armonia.pub/ws",
-    "ws":"ws://localhost:8787/ws"
+    "ws":"wss://api.armonia.pub/ws",
+    "xws":"ws://localhost:8787/ws"
 }
 
 
