@@ -1,15 +1,15 @@
 {
-  "EQAAWqprlKCpSFMT1IE_aHFrM9CgvRMu5RZ_RzqmKJXpV0PI": {
+  "EQAFLThH6ZoSUFL3QWeSrmTllu4YpL_msE_8lIyzZH19SZAp": {
     "$$type": "ComunidadDetail",
-    "addr": "EQAAWqprlKCpSFMT1IE_aHFrM9CgvRMu5RZ_RzqmKJXpV0PI",
-    "parent": "EQBQ4eTyMKOsSfirmKv8HuqVOn7arIhBXsjviYc1yVyiYRix",
+    "addr": "EQAFLThH6ZoSUFL3QWeSrmTllu4YpL_msE_8lIyzZH19SZAp",
+    "parent": "EQDbyF5cYChE44SQfujhX5I79cKjmKjUPesKeCb0HJ8mMp-E",
     "addrVote": "EQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM9c",
-    "addrResolver": "EQAMzhZHqFY8zXiTpsT1o3PS6GAA0x1SIkIrJ0dBkUVvAtYP",
-    "addrAmbrosia": "EQAxoghuV3JVbVQ1tPnBOpeTI5caawUeRsoq0F-_dZvgLwi9",
-    "balance": "465419200",
-    "name": "Comunidad1",
-    "cid": "bafkreicecnx2gvntm6fbcrvnc336qze6st5u7qq7457igegamd3bzkx7ri",
+    "addrResolver": "EQDygxDe1kzAbFJaeVXRCQckgMI7x9ExemzmC3PwI3YOr8Kw",
+    "addrAmbrosia": "EQBkOAOCkJQOkKkhz5M7uM-k537yFqddIioy44SJxGRIfWsW",
+    "balance": "466798400",
+    "name": "Comunidad 1",
+    "cid": "cid1",
     "recPass": [],
-    "lastread": 1773154863854
+    "lastread": 1773443278482
   }
 }
