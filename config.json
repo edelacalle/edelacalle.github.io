@@ -1,5 +1,5 @@
 {
-    "version":"0.0.12",
+    "version":"0.0.16",
     "i18n":{
         "fallbackLng": "es",
         "interpolation": {"escapeValue": false},
@@ -19,7 +19,7 @@
     "explorer":"https://testnet.tonviewer.com/",
     "messages":"messages.json",
     "intervals":{
-        "reload_config":50000
+        "reload_config":60000
     },
     "ipfs":{
         "protocol":"https://",
