@@ -32,7 +32,7 @@
     "currentRPC":"armonia",
     "rpcJSON":{
          "local"     : {"url":"/rpc"}
-        ,"armonia"   : {"url":"https://armonia.pub/rpc"}
+        ,"armonia"   : {"url":"https://api.armonia.pub/rpc"}
         ,"tatum"     : {"url":"https://ton-testnet.gateway.tatum.io/jsonRPC"}
         ,"toncenter" : {"url":"https://testnet.toncenter.com/api/v2/jsonRPC"}
         ,"onfinality":{"url":"https://ton-testnet.api.onfinality.io/public/jsonRPC"}        
