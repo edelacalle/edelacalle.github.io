@@ -62,7 +62,18 @@
         "exportar_datos_local_texto":"Export the local data saved on the browser.",
         "espere":"Please wait",
         "server_espere":"Requesting information from the server, please wait",
-        "multimoneda":"Multiple currencies"
+        "multimoneda":"Multiple currencies",
+        "registro":"DAO",
+        "DAO":"DAO",
+        "ciudadanos":"Citizens",
+        "debugger": "Debugger",
+        "plaza": "Plaza",
+        "otros": "Others",
+        "seleccione_alias": "Select Alias",
+        "seleccione_titulo": "Select Title",
+        "seleccione_detalle": "Select Detail",
+        "address": "Address",
+        "comunidades":"Communities"
 
 
     },
