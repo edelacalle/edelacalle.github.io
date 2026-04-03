@@ -1,0 +1,168 @@
+{
+    "version":"0.0.1",
+    "title":"Armonia",
+    "address":{
+        "addrDAO":"",
+        "addrRes":"",
+        "addrLog":""
+    },
+    "world":{
+        "areas":{
+            "arm.dao":{
+                "title":"Fundación Armonía",
+                "owner":"god.zeus",
+                "subareas":{
+                    "sub.dao.norm":{
+                        "title":"Area Normativa",
+                        "talleres":{
+                            "und.dao.norm.const":{"title":"Constitución Armonía"},
+                            "und.dao.norm.game":{"title":"Normas Juego"}
+                        }
+                    },
+                    "sub.dao.econ":{
+                        "title":"Area Economica",
+                        "talleres":{
+                            "und.dao.econ.boveda1":{"title":"Boveda I"},
+                            "und.dao.econ.boveda2":{"title":"Boveda II"},
+                            "und.dao.econ.boveda3":{"title":"Boveda III"},
+                            "und.dao.econ.boveda4":{"title":"Boveda VI"},
+                            "und.dao.econ.boveda5":{"title":"Boveda V"},
+                            "und.dao.econ.boveda6":{"title":"Boveda VI"}
+                        }
+                    },
+                    "sub.dao.soc":{"title":"Area Social"}
+               }
+            },
+            "arm.int":{
+                "title":"Area de Interior",
+                "owner":"god.zeus",
+                "subareas":{
+                     "sub.int.pol":{
+                        "title":"Policia",
+                        "talleres":{
+                            "und.int.pol.denuncias":{"title":"Denuncias"},
+                            "und.int.pol.human":{"title":"Certificado Humanidad"}
+                        }
+                    }
+                }
+            },
+
+            "arm.defensa":{
+                "title":"Area de Defensa",
+                "xowner":"god.ares",
+                 "owner":"god.zeus",
+               
+                "subareas":{
+                    "arm.defensa.dao":{"title":"Protección Armonia"}
+                }
+            },
+            "arm.educacion":{
+                "title":"Area de Educación",
+                "owner":"god.atenea",
+                "subareas":{
+                    "arm.educacion.formacion":{"title":"Formacion"}
+                }
+            },
+            "arm.economia":{
+                "title":"Area de Economia y comercio",
+                "owner":"god.hermes",
+                "subareas":{
+                    "arm.economia.tesoreria":{"title":"Tesoreria"},
+                    "arm.economia.normativa":{"title":"Normas Economicas y Fiscales"}
+                }
+            },
+            "arm.agricultura":{
+                "title":"Area de Agricultura y Alimentacion",
+                "owner":"god.demeter",
+                "subareas":{
+                    "arm.agricultura.comercio":{"title":"Intercambio productos Eco"}
+                }
+            },
+            "arm.industria":{
+                "title":"Area de Industria y Tecnologia",
+                "owner":"god.hefesto",
+                "subareas":{
+                    "arm.industria.herramientas":{"title":"Nuevas Herramientas"},
+                    "arm.industria.calidad":{"title":"Control de Calidad"},
+                    "arm.industria.certif":{"title":"Certificaciones"}
+                    
+                }
+            },
+            "arm.cultura":{
+                "title":"Area de Cultura",
+                "owner":"god.apolo",
+                "subareas":{}
+            },
+            "arm.sanidad":{
+                "title":"Area de sanidad",
+                "owner":"god.zeus",
+                "subareas":{
+                    "arm.sanidad.prevencion":{"title":"Prevencion Enfermedades"},
+                    "arm.sanidad.tratamiento":{"title":"Tratamiento Enfermedades"}
+                    
+                }
+            },
+            "arm.medioambiente":{
+                "title":"Area de Medio Ambiente",
+                "owner":"god.artemisa",
+                "subareas":{}
+            },
+            "arm.sociales":{
+                "title":"Area de asuntos Sociales",
+                "owner":"god.afrodita",
+                "subareas":{}
+            },
+            "arm.justicia":{
+                "title":"Area de Interior",
+                "owner":"god.hades",
+                "subareas":{}
+            },
+            "arm.territorio":{
+                "title":"Area Territorio",
+                "owner":"god.zeus",
+                "subareas":{}
+            },
+            "arm.familia":{
+                "title":"Area de familia",
+                "owner":"god.hera",
+                "subareas":{}
+            },
+            "arm.turismo":{
+                "title":"Area de turismo",
+                "owner":"god.dionisio",
+                "subareas":{}
+            },
+            "arm.digital":{
+                "title":"Area Transformacion Digigal",
+                "owner":"god.tecnos",
+                "subareas":{}
+            },
+            "arm.exteriores":{
+                "title":"Asuntos Exteriores",
+                "owner":"god.diplomia",
+                "subareas":{}
+            },
+            "arm.trabajo":{
+                "title":"Area de Trabajo",
+                "owner":"god.hergon",
+                "subareas":{}
+            },
+            "arm.vivienda":{
+                "title":"Area de Vivienda e Urbanismo",
+                "owner":"god.urbania",
+                "subareas":{}
+            },
+            "arm.ciencia":{
+                "title":"Area de Ciencia e Innovacion",
+                "owner":"god.sofon",
+                "subareas":{}
+            },
+            "arm.proteccion":{
+                "title":"Area de Igualdad y Derechos",
+                "owner":"god.equitas",
+                "subareas":{}
+            }
+        }             
+    }
+}
+
