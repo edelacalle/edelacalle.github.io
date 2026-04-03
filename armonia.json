@@ -14,9 +14,23 @@
                 "subareas":{
                     "sub.dao.norm":{
                         "title":"Area Normativa",
-                        "talleres":{
-                            "und.dao.norm.const":{"title":"Constitución Armonía"},
-                            "und.dao.norm.game":{"title":"Normas Juego"}
+                        "comunidades":{
+                            "com.const":{
+                                "title":"Constitucion",
+                                "talleres":{
+                                    "und.int.pol.info":{"title":"Información Ciudadano"},
+                                    "und.int.pol.denuncias":{"title":"Denuncias"},
+                                    "und.int.pol.human":{"title":"Certificado Humanidad"}
+                                }
+                            },
+                            "com.normas":{
+                                "title":"Normas",
+                                "talleres":{
+                                    "und.int.pol.info":{"title":"Información Ciudadano"},
+                                    "und.int.pol.denuncias":{"title":"Denuncias"},
+                                    "und.int.pol.human":{"title":"Certificado Humanidad"}
+                                }
+                            }
                         }
                     },
                     "sub.dao.econ":{
@@ -34,33 +48,59 @@
                }
             },
             "arm.int":{
-                "title":"Area de Interior",
+                "title":"Defensa e Interior",
                 "owner":"god.zeus",
                 "subareas":{
-                     "sub.int.pol":{
-                        "title":"Policia",
-                        "talleres":{
-                            "und.int.pol.denuncias":{"title":"Denuncias"},
-                            "und.int.pol.human":{"title":"Certificado Humanidad"}
+                    "sub.int":{
+                        "title":"Interior",
+                        "comunidades":{
+                            "com.policia":{
+                                "title":"Policia",
+                                "talleres":{
+                                    "und.int.pol.info":{"title":"Información Ciudadano"},
+                                    "und.int.pol.denuncias":{"title":"Denuncias"},
+                                    "und.int.pol.human":{"title":"Certificado Humanidad"}
+                                }
+                            }
+                        }
+                    },
+                    "sub.def":{
+                        "title":"Defensa Exterior",
+                        "comunidades":{
+                            "com.hack":{
+                                "title":"Hackers White Hat",
+                                "talleres":{
+                                    "und.def.dao":{"title":"Defensa DAO"}
+                                }
+                            }
                         }
                     }
                 }
             },
 
-            "arm.defensa":{
-                "title":"Area de Defensa",
+            "arm.ocio":{
+                "title":"Ocio y Entretenimiento",
                 "xowner":"god.ares",
                  "owner":"god.zeus",
                
                 "subareas":{
-                    "arm.defensa.dao":{"title":"Protección Armonia"}
+                    "sub.ocio.hobbies":{"title":"Hobbies"},
+                    "sub.ocio.":{"title":"Relaciones Personales"}
+
                 }
             },
+
             "arm.educacion":{
                 "title":"Area de Educación",
                 "owner":"god.atenea",
                 "subareas":{
-                    "arm.educacion.formacion":{"title":"Formacion"}
+                    "arm.educacion.formacion":{"title":"Formacion"},
+                    "arm.cultura":{
+                        "title":"Area de Cultura",
+                        "owner":"god.apolo",
+                        "subareas":{}
+                    }
+
                 }
             },
             "arm.economia":{
@@ -87,11 +127,6 @@
                     "arm.industria.certif":{"title":"Certificaciones"}
                     
                 }
-            },
-            "arm.cultura":{
-                "title":"Area de Cultura",
-                "owner":"god.apolo",
-                "subareas":{}
             },
             "arm.sanidad":{
                 "title":"Area de sanidad",
