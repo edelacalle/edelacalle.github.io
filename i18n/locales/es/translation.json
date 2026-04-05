@@ -65,7 +65,9 @@
         "multimoneda":"Múltiples Monedas",
         "registro":"DAO",
         "ciudadanos":"Ciudadanos",
-        "comunidades":"Comunidades"
+        "comunidades":"Comunidades",
+        "directorio":"Directorio",
+        "DAO":"Organizacion"
 
 
     },
